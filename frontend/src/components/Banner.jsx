@@ -19,7 +19,7 @@ const Banner = () => {
 
                 {/* RIGHT IMAGE */}
                 <div className="flex justify-center">
-                    <img src="src/assets/book.jpg" alt="Books" className="max-w-md" />
+                    <img src="src/assets/book.png" alt="Books" className="max-w-md" />
                 </div>
 
             </div>

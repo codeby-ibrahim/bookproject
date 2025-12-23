@@ -1,18 +1,16 @@
-import React from 'react';   // ✅ ADD THIS LINE
+import React from "react";          // ✅ add (JSX safety)
 import Header from "./components/Header";
-import Banner from './components/Banner';
+import Banner from "./components/Banner";
+import FreeBook from "./components/FreeBook";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <Header />
       <Banner />
-
-      <main className="p-8 text-center">
-        <h1 className="text-3xl font-bold">
-          Welcome to Book Shop 🚀
-        </h1>
-      </main>
+      <FreeBook />
+      <Footer />
     </>
   );
 }
