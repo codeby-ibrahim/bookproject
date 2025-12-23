@@ -5,7 +5,7 @@
         "title": "Build Good Habits",
         "category": "Self Help",
         "price": "Free",
-        "image": "/assets/books1.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "title": "Financial Freedom",
         "category": "Finance",
         "price": "Free",
-        "image": "/assets/books2.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "title": "Success Mindset",
         "category": "Motivation",
         "price": "Free",
-        "image": "/assets/books3.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "title": "Focus & Productivity",
         "category": "Productivity",
         "price": "Free",
-        "image": "/assets/books4.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "title": "Follow Your Dreams",
         "category": "Fiction",
         "price": "Free",
-        "image": "/assets/books5.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "title": "Live in Present",
         "category": "Spiritual",
         "price": "Free",
-        "image": "/assets/books6.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "id": 7,
@@ -53,6 +53,6 @@
         "title": "Purpose of Life",
         "category": "Lifestyle",
         "price": "Free",
-        "image": "/assets/books6.jpg"
+        "image": "https://images.unsplash.com/photo-1695774165691-8a01a6045952?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ]

@@ -1,27 +1,24 @@
 import React from "react";
+import bookImg from "../assets/book.png"; // ✅ correct way
 
 const Banner = () => {
     return (
-        <section className="w-full py-16">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+        <section className="py-10 sm:py-16">
+            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
 
-                {/* LEFT */}
-                <div>
-                    <h1 className="text-4xl font-bold">
-                        Hello, welcomes here to learn <br />
-                        something <span className="text-pink-500">new everyday!!!</span>
+                <div className="text-center md:text-left">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+                        Hello, welcome here to learn <br />
+                        <span className="text-pink-500">something new everyday!</span>
                     </h1>
-
                     <p className="mt-4 text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Learn habits, mindset, productivity & finance.
                     </p>
                 </div>
 
-                {/* RIGHT IMAGE */}
-                <div className="flex justify-center">
-                    <img src="src/assets/book.png" alt="Books" className="max-w-md" />
+                <div className="flex justify-center md:justify-end">
+                    <img src={bookImg} alt="Books" className="w-72" />
                 </div>
-
             </div>
         </section>
     );

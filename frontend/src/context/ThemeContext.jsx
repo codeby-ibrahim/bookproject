@@ -3,7 +3,6 @@ import React, { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-    // ❗ Default LIGHT mode
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
@@ -20,4 +19,3 @@ const ThemeProvider = ({ children }) => {
 };
 
 export default ThemeProvider;
- 

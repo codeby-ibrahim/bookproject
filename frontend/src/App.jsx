@@ -1,15 +1,21 @@
-import React from "react";          // ✅ add (JSX safety)
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import Banner from "./components/Banner";
-import FreeBook from "./components/FreeBook";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Course from "./pages/Course";
 
 function App() {
   return (
     <>
       <Header />
-      <Banner />
-      <FreeBook />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Course />} />
+      </Routes>
+
       <Footer />
     </>
   );
