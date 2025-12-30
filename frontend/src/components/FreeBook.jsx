@@ -1,122 +1,58 @@
-import React, { useRef, useState, useEffect } from "react";
-import books from "../data/list.json";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Slider from "react-slick";
 
-const FreeBook = () => {
-    const sliderRef = useRef(null);
-    const [activeIndex, setActiveIndex] = useState(0);
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-    // 🔍 FILTER DATA (example: sirf Free books)
-    const filterData = books.filter(
-        (book) => book.price === "Free"
-    );
+import Cards from "./Cards";
 
-    // detect scroll for dots
-    const handleScroll = () => {
-        const scrollLeft = sliderRef.current.scrollLeft;
-        const cardWidth = sliderRef.current.children[0].offsetWidth + 16;
-        setActiveIndex(Math.round(scrollLeft / cardWidth));
+function Freebook() {
+  const [book, setBook] = useState([]);
+
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get("http://localhost:4000/api/books");
+
+        const data = res.data.filter(
+          (item) => item.category === "Free"
+        );
+
+        setBook(data);
+      } catch (error) {
+        console.log(error);
+      }
     };
+    getBook();
+  }, []);
 
-    // 🔥 AUTO SLIDE
-    useEffect(() => {
-        const slider = sliderRef.current;
-        if (!slider) return;
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 600, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
+  };
 
-        const cardWidth = slider.children[0].offsetWidth + 16;
+  return (
+    <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
+      <h1 className="font-semibold text-xl pb-2">
+        Free Offered Courses
+      </h1>
 
-        const interval = setInterval(() => {
-            let nextIndex = activeIndex + 1;
+      <Slider {...settings}>
+        {book.map((item) => (
+          <Cards key={item._id} item={item} />
+        ))}
+      </Slider>
+    </div>
+  );
+}
 
-            if (nextIndex >= filterData.length) {
-                nextIndex = 0;
-            }
-
-            slider.scrollTo({
-                left: nextIndex * cardWidth,
-                behavior: "smooth",
-            });
-
-            setActiveIndex(nextIndex);
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [activeIndex, filterData.length]);
-
-    return (
-        <section className="py-10">
-            <div className="max-w-7xl mx-auto px-4">
-
-                {/* Heading */}
-                <h2 className="text-xl sm:text-3xl font-bold mb-2">
-                    Free Books
-                </h2>
-                <p className="text-gray-500 mb-8">
-                    Explore our collection of free books.
-                </p>
-
-                {/* Slider */}
-                <div
-                    ref={sliderRef}
-                    onScroll={handleScroll}
-                    className="mt-4 flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth"
-                >
-                    {filterData.map((book) => (
-                        <div
-                            key={book.id}
-                            className="min-w-[150px] sm:min-w-[220px] bg-white border rounded-lg shadow"
-                        >
-                            <img
-                                src={book.image}
-                                alt={book.name}
-                                className="h-32 sm:h-40 w-full object-cover rounded-t-lg"
-                            />
-
-                            <div className="p-3">
-                                <h3 className="font-semibold truncate">
-                                    {book.name}
-                                </h3>
-
-                                <p className="text-sm text-gray-500 truncate">
-                                    {book.title}
-                                </p>
-
-                                <div className="flex justify-between items-center mt-2">
-                                    <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
-                                        {book.category}
-                                    </span>
-                                    <span className="text-green-600 font-semibold">
-                                        {book.price}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Dots */}
-                <div className="flex justify-center gap-2 mt-5">
-                    {filterData.map((_, index) => (
-                        <span
-                            key={index}
-                            className={`h-2 w-2 rounded-full transition-all duration-300 ${activeIndex === index
-                                ? "bg-blue-500 w-4"
-                                : "bg-gray-300"
-                                }`}
-                        />
-                    ))}
-                </div>
-
-                {/* Demo Text */}
-                <div className="mt-6 text-center max-w-2xl mx-auto">
-                    <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                        Discover hand-picked free books to improve your habits, mindset,
-                        productivity, and financial knowledge.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-    );
-};
-
-export default FreeBook;
+export default Freebook;
